@@ -2,7 +2,7 @@
 * Costante usata per abilitare la stampa di tutto il codice usato per debuggare.
 * 0 -> nascondi tutte le stampe;
 * 1 -> mostra tutte le stampe. */
-#define DBG 1
+#define DBG 0
 
 /* ■
 * Definizione struttura per le variabili condivise. */
@@ -40,8 +40,9 @@ void cuoco();
  * @brief Funzione che stabilisce il comportamento del singolo selvaggio.
  * Verranno poi trattati come processi diversi.
  * 
+ * @param int Numero del selvaggio
  */
-void selvaggio();
+void selvaggio(int n);
 
 /**
  * @brief Metodo per deallocare la memoria condivisa.

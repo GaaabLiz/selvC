@@ -1,5 +1,7 @@
 selvaggi:
-	gcc selvaggi.c -Wall -Wextra -pedantic -pthread -lrt -o selvaggi 
+	gcc -Wall -Wextra -pedantic -pthread -lrt -o selvaggi selvaggi.o
+selvaggi.o:
+	gcc -Wall -Wextra -pedantic -pthread -lrt -c selvaggi.c
 clean:
 	rm selvaggi
 valgrind: 
