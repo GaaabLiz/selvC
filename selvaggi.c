@@ -10,8 +10,8 @@
 #include <wait.h>
 #include "selvaggi.h"
 
-/*
-gcc selvaggi.c -Wall -Wextra -pedantic -lrt -pthread -o selvaggi */
+
+/* gcc selvaggi.c -Wall -Wextra -pedantic -lrt -pthread -o selvaggi */
 
 /* Variabile che indica il numero di selvaggi che l'utente ha passato
 da linea di comando. Verrà usata per craare i singoli processi per i
@@ -119,7 +119,6 @@ int main(int argc, char const *argv[]){
     sem_init(sem_pieno, 1, 0);
     sem_init(sem_vuoto, 1, 0);
     sem_init(mutex, 1, 1);
-    
 
     /* Creazione processo cuoco */
     pid_t pidcuoco = fork();
@@ -168,6 +167,8 @@ int main(int argc, char const *argv[]){
 }
 
 
+
+
 void cuoco() {
     /* Ciclo infinito. Il processo cuoco verrà terminato con un segnale dal padre 
     oppure risvegliato dai selvaggi quando non ci saranno porzioni in pentola. */
@@ -206,6 +207,7 @@ void cuoco() {
 
     }
 }
+
 
 
 
@@ -253,7 +255,6 @@ void selvaggio(int n) {
         /* Prima di mangiare di nuovo, devo digerire */
         sleep(1);
     }
-
 
     /* Quando ho finito di mangiare tutte le mangiate, termino */
     printf("[SELVAGGIO %d]: Non voglio piu' mangiare perchè sono sazio. \n", n);
