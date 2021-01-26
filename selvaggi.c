@@ -15,7 +15,7 @@
 
 /* Variabile che indica il numero di selvaggi che l'utente ha passato
 da linea di comando. Verrà usata per craare i singoli processi per i
-selvaggi. Dichiarata qua verrà usata solo nel processo padre. */
+selvaggi. Dichiarata qua, in quanto verrà usata solo nel processo padre. */
 size_t selvaggiCount = 0;
 
 /* Dichiarazione dei puntatori che punteranno all'area di memoria condivisa
@@ -40,11 +40,10 @@ shared *sharedInfo;
  * @brief 
  * Per iniziare l'esecuzione del programma, servono alcune informazioni che
  * devono essere inserite da linea di comando.
- *   argv[0] -> <nome_programma>s
+ *   argv[0] -> <nome_programma>
  *   argv[1] -> <numero_selvaggi_da_creare>
  *   argv[2] -> <numero_massimo_porzioni_per_pentola>
  *   argv[3] -> <numero_mangiate_per_selvaggio>
- * 
  * @param argc 
  * @param argv 
  * @return int 
@@ -181,10 +180,10 @@ void cuoco() {
         printf("[CUOCO]: Mi sono svegliato.\n");
 
         /* Quando questo processo viene svegliato perchè si è fatta una up
-        sul sem_vuoto, controllo se le ci sono porzioni in pentola. Se è
+        sul sem_vuoto, controllo se ci sono porzioni in pentola. Se è
         vuota, questo processo cuoco cucina le porzioni e le inserisce.
         Se non è vuoto, verrà sospeso di nuovo */
-        if(sharedInfo->porzioni <= 0) {
+        if(sharedInfo->porzioni == 0) {
             printf("[CUOCO]: Sto cucinando perchè la pentola è vuota.\n");
 
             /* Cucina le porzioni */
