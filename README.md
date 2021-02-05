@@ -5,8 +5,8 @@ A simple IPC problem written in C.
 A tribe of N savages eats in common from a pot that can hold up to M servings of
 stew, it is assumed that the pot is initially full. When a savage is hungry he checks the pot:
 
-i) if there are no portions, he wakes up the cook and waits until he has completely refilled the pot before serving himself;
-ii) if the pot contains at least a portion, he appropriates it.
+- if there are no portions, he wakes up the cook and waits until he has completely refilled the pot before serving himself;
+- if the pot contains at least a portion, he appropriates it.
 
 The cook checks that there are portions and, if there are, he falls asleep, otherwise he cooks M portions
 and he puts them in the pot. Each savage must eat NGIRI times before finishing.
