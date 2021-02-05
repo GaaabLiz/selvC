@@ -1,5 +1,5 @@
 # selvC
-A simple IPC problem written in C.
+An implementation of the classic savage IPC problem written in C.
 
 ## Description
 A tribe of N savages eats in common from a pot that can hold up to M servings of
